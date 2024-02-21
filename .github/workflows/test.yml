@@ -16,6 +16,6 @@ jobs:
         run: |
           npm test
           npm run build
-          npm lint  
+          npm run lint  
       - name: End
         run: echo End of practice...
