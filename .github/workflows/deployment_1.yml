@@ -1,0 +1,32 @@
+name: Deployment Exercise 1
+on: push
+jobs: 
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Get code
+        uses: actions/checkout@v3
+      - name: Install NodeJS
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run tests
+        run: npm test
+      - name: End testing
+        run: echo End of testing
+
+      - name: Run lint
+        run: npm run lint
+      - name: End linting
+        run: echo End of lintin
+
+      - name: Run build
+        run: npm run build
+      - name: End build
+        run: echo End of build
+
+      - name: End
+        run: echo End of practice...
